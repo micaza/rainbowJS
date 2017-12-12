@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+	var index = 0;
+	var transparency = '1'; // between 0 and 1 for transparent
+	transparency += ')';
+	// rainbow colors
+	var colors=	['rgba(148, 0, 211,' + transparency, 'rgba(75, 0, 130,'+ transparency, 'rgba(0, 0, 255,'+ transparency, 'rgba(0, 255, 0,'+ transparency, 'rgba(255, 255, 0,'+ transparency, 'rgba(255, 127, 0,'+ transparency,'rgba(255, 0, 0,'+ transparency];
+	var length = colors.length;
+	var numbColors = 4;
+	setInterval(function() {
+		let gradients = '';
+		for (let x = 0; x < numbColors; x++) {
+			gradients += colors[(index + x) % length];
+			gradients += (x < numbColors - 1) ? ', ' : '';
+		}
+		index = (index + 1) % length;
+		document.body.style.background = 'red';
+		document.body.style.background = '-webkit-linear-gradient(left, ' + gradients + ')';
+		document.body.style.background = '-o-linear-gradient(right,' + gradients + ')';
+		document.body.style.background = '-moz-linear-gradient(right,'+ gradients + ')';
+		document.body.style.background = 'linear-gradient(to right,' + gradients + ')';
+	}, 80);
+</script>
+
+</body>
+</html>
