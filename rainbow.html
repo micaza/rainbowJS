@@ -13,8 +13,7 @@
 	setInterval(function() {
 		let gradients = '';
 		for (let x = 0; x < numbColors; x++) {
-			gradients += colors[(index + x) % length];
-			gradients += (x < numbColors - 1) ? ', ' : '';
+			gradients += (x < numbColors - 1) ? colors[(index + x) % length] + ', ' : colors[(index + x) % length];
 		}
 		index = (index + 1) % length;
 		document.body.style.background = 'red';
