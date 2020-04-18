@@ -22,7 +22,7 @@
     document.body.style.background = 'red';
     setInterval(function() {
         let gradients = '';
-        for (let x = 0; x < numbColors; x++) {
+        for (let x = 0; x < numbColors; x += 1) {
             gradients += (x < numbColors - 1) ? colors[(index + x) % length] + ', ' : colors[(index + x) % length];
         }
         index = (index + 1) % length;
